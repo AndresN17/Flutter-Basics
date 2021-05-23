@@ -12,7 +12,23 @@ class MyApp extends StatelessWidget {
           title: Text("My First App"),
         ),
         body: Center(
-          child: Text("This is my first flutter app."),
+          child: Column(
+            children: <Widget>[
+              Text("What is your name?"),
+              RaisedButton(
+                child: Text("Answer 1"),
+                onPressed: null,
+              ),
+              RaisedButton(
+                child: Text("Answer 2"),
+                onPressed: null,
+              ),
+              RaisedButton(
+                child: Text("Answer 3"),
+                onPressed: null,
+              ),
+            ],
+          ),
         ),
       ),
     );
