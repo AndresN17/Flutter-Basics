@@ -39,18 +39,25 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: <Widget>[
+              SizedBox(height: 14,),
               Question(questions[_questionIndex]),
+              SizedBox(height: 8,),
               RaisedButton(
                 child: Text(answers[0]),
                 onPressed: _answerQuestion,
+                color: Color.fromRGBO(212, 20, 17,1.0),
               ),
+              SizedBox(height: 8,),
               RaisedButton(
                 child: Text(answers[1]),
                 onPressed: () => print("Pressed with anonymous function!"),
+                color: Color.fromRGBO(30, 101, 214,1.0),
               ),
+              SizedBox(height: 8,),
               RaisedButton(
                 child: Text(answers[2]),
                 onPressed: _answerQuestion,
+                color: Color.fromRGBO(22, 140, 40,1.0),
               ),
             ],
           ),
