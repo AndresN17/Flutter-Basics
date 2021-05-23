@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  void answerQuestion(){
+  void answerQuestion() {
     print("Answer chosen!");
   }
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text("Answer 2"),
-                onPressed: answerQuestion,
+                onPressed: () => print("Pressed with anonymous function!"),
               ),
               RaisedButton(
                 child: Text("Answer 3"),
