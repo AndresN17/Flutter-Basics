@@ -2,11 +2,11 @@ import "package:flutter/material.dart";
 
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
-  String answerText;
-  int r;
-  int g;
-  int b;
-  Answer(this.selectHandler, this.answerText,this.r, this.g, this.b);
+  final String answerText;
+  final int r;
+  final int g;
+  final int b;
+  Answer(this.selectHandler, this.answerText, this.r, this.g, this.b);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Answer extends StatelessWidget {
       child: RaisedButton(
         child: Text(answerText),
         onPressed: selectHandler,
-        color: Color.fromRGBO(r,g,b, 1.0),
+        color: Color.fromRGBO(r, g, b, 1.0),
       ),
     );
   }
