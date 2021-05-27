@@ -13,25 +13,27 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
+  final questions = const [
+    {
+      "questionText": "What's your favorite color?",
+      "answer": ["Red", "Blue", "Green"]
+    },
+    {
+      "questionText": "What's your favorite animal?",
+      "answer": ["Lion", "Whale", "Monkey"]
+    },
+  ];
+
 
   void _answerQuestion() {
     setState(() => {_questionIndex = _questionIndex + 1});
-    print("Answer chosen!");
+    if(_questionIndex < questions.length){
+      print("We have more questions");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    const questions = [
-      {
-        "questionText": "What's your favorite color?",
-        "answer": ["Red", "Blue", "Green"]
-      },
-      {
-        "questionText": "What's your favorite animal?",
-        "answer": ["Lion", "Whale", "Monkey"]
-      },
-    ];
-
     return MaterialApp(
       title: "My First App",
       home: Scaffold(
@@ -39,7 +41,7 @@ class _MyAppState extends State<MyApp> {
           title: Text("My First App"),
         ),
         body: Center(
-          child: Column(
+          child: _questionIndex < questions.length ? Column(
             children: <Widget>[
               SizedBox(
                 height: 14,
@@ -50,7 +52,7 @@ class _MyAppState extends State<MyApp> {
                 return Answer(_answerQuestion, answer, 212, 20, 17);
               }).toList(),
             ],
-          ),
+          ): Text("There is no more questions!", style: TextStyle(fontSize: 18, color: Colors.cyanAccent,)) ,
         ),
       ),
     );
